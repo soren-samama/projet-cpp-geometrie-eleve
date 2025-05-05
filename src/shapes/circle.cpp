@@ -37,4 +37,10 @@ void Circle::resize(double ratio) {
 }
 
 
-// il manque le bool Circle::equals (Circle circle){};
+bool Circle::equals(Circle circle){
+    bool circle = false; 
+    if (r!==0){
+        circle = true; 
+    }
+     return circle; 
+}
