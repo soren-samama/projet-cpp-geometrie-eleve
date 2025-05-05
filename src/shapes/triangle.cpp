@@ -42,3 +42,21 @@ void Triangle::draw(){
 
 }
 
+void Triangle::translate(){
+    
+    B = Point( B.x + (T.x-A.x) , B.y + (T.y-A.y) )
+    C = Point( C.x + (T.x-A.x) , C.y + (T.y-A.y) ) 
+    A = T;
+
+}
+
+void Triangle::resize(){
+
+    Point G = Triangle::center();
+
+    A = Point( G.x + ratio * (A.x - G.x) , G.y + ratio * (A.y - G.y) );
+    B = Point( G.x + ratio * (B.x - G.x) , G.y + ratio * (B.y - G.y) );
+    C = Point( G.x + ratio * (C.x - G.x) , G.y + ratio * (C.y - G.y) );
+
+}
+
