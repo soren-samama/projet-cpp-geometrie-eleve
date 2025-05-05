@@ -1,6 +1,7 @@
 #include "point.hpp"
 #include "shapes/triangle.hpp"
 #include <cmath>
+#include <vector>
 
 Triangle::Triangle(Point P, Point Q, Point R) : A(P), B(Q), C(R) {}
 
@@ -30,5 +31,14 @@ Point Triangle::center(){
     Gy = (A.y + B.y + C.y)/3;
 
     return Point(Gx,Gy);
-    
+
 }
+
+void Triangle::draw(){
+
+    std::vector<point> points = {A,B,C,A};
+
+    draw_pictures(points);
+
+}
+
