@@ -34,5 +34,5 @@ void Square::draw(){  //draw the square on the screen at coordonates 0,0
 }
 
 void Square::translate(Point T){
-    A = T;
+    A = T; 
 }
