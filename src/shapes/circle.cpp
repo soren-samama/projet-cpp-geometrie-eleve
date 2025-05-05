@@ -22,13 +22,13 @@ void Circle::draw() {
         double angle = i * numbers::pi / 180;
         double x = center.x + radius * cos(angle);
         double y = center.y + radius * sin(angle);
-        print(Circle.push_back(Point(x, y)));
+        print(Circle.push_back(Point(x, y))); // pb avec le circle.push_back
     }
 }
 
 void Circle::translate(Point T) {
     Circle.x = T.x + center.x; 
-    Circle.y = T.y + center.y;
+    Circle.y = T.y + center.y; // circle n'est pas défini
 }
 
 
@@ -37,3 +37,4 @@ void Circle::resize(double ratio) {
 }
 
 
+// il manque le bool Circle::equals (Circle circle){};
