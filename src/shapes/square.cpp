@@ -6,10 +6,10 @@
 Square::Square(Point P, Point R) : A(P), C(R) {};
 
 double Square::side(){ //return length of a side 
-    if (Square.A.x > Square.C.x) {
-        return Square.A.x-Square.C.x;
+    if (A.x > C.x) {
+        return A.x-C.x;
     } else {
-        return Square.C.x - Square.A.x;
+        return C.x - A.x;
     }
 }
 
@@ -23,13 +23,16 @@ double Square::area(){  //return area of a square
 
 Point Square::center(){  //return coordonates of the center of the square
     double l = Square.side()/2;
-    return Point(std::max(Square.A.x,Square.C.x)-l,std::max(Square.A.y,Square.C.y)-l); 
+    return Point(std::max(A.x,C.x)-l,std::max(A.y,C.y)-l); 
 }
 
 void Square::draw(){  //draw the square on the screen at coordonates 0,0
     A1 = Point(A.x+Square.side(), A.y);
     C1 = Point(C.x-Square.side(), C.y);
-    std::vector<Point> points = {Square.A, A1, Square.C, C1, Square.A};
+    std::vector<Point> points = {A, A1, C, C1, A};
     draw_picture(points);
 }
 
+void Square::translate(Point T){
+    A = T;
+}
