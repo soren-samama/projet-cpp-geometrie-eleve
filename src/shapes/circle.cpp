@@ -39,7 +39,7 @@ void Circle::resize(double ratio) {
 }
 
 
-bool Circle::equals(Circle circle){
+bool Circle::equals(Circle circle){ // to do : precision error 
     return(radius==circle.radius)&&(center.x==circle.center.x && center.y==circle.center.y); 
 }
 
