@@ -34,7 +34,7 @@ struct Circle {
 	 */
 	void resize(double ratio); // resize while maintaining center
 	/** 
-	* Compares circle to the current circle by comparing the center and the radius
+	* Compares circle with the use of epsilon to minimize the difference 
 	* @param circle is the circle used for comparison 
 	*/
 	bool equals(Circle circle);
