@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "tests_helpers.hpp"
+#include <cassert>
 
 int main() {
     Circle c(10.0, Point(5.0, 3.0));

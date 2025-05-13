@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "tests_helpers.hpp"
+#include <cassert>  
 
 int main()
 {
