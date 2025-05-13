@@ -4,6 +4,11 @@
 #include <vector>
 #include "tests_helpers.hpp"
 #include <cassert>
+#include <cmath>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 
 int main() {
     Circle c(10.0, Point(5.0, 3.0));
