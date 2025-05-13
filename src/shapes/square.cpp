@@ -2,7 +2,12 @@
 #include "shapes/square.hpp"
 #include "draw.hpp"
 #include <stdio.h>
-#include "cmath"
+#include <cmath>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 
 Square::Square(Point P, Point R) : A(P), C(R) {};
 

@@ -5,6 +5,13 @@
 #include "tests_helpers.hpp"
 #include <cassert>
 #include <cmath>
+<<<<<<< HEAD
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+=======
+>>>>>>> 0012eeff01df1c50347711c53b100c45c413a864
 
 int main() {
     Circle c(10.0, Point(5.0, 3.0));
