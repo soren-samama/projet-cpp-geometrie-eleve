@@ -21,17 +21,17 @@ TESTS = test_circle test_square test_triangle test_all_shapes
 all: $(TESTS)
 
 # Rules for test compilation
-test_circle: $(TEST_DIR)/test_circle.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $< $(SRC_DIR)/*.cpp $(SRC_DIR)/shapes/*.cpp $(LDFLAGS)
+test_circle: $(TEST_DIR)/test_circle.cpp $(TEST_DIR)/tests_helpers.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $< $(TEST_DIR)/tests_helpers.cpp $(SRC_DIR)/*.cpp $(SRC_DIR)/shapes/*.cpp $(LDFLAGS)
 
-test_square: $(TEST_DIR)/test_square.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $< $(SRC_DIR)/*.cpp $(SRC_DIR)/shapes/*.cpp $(LDFLAGS)
+test_square: $(TEST_DIR)/test_square.cpp $(TEST_DIR)/tests_helpers.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $< $(TEST_DIR)/tests_helpers.cpp $(SRC_DIR)/*.cpp $(SRC_DIR)/shapes/*.cpp $(LDFLAGS)
 
-test_triangle: $(TEST_DIR)/test_triangle.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $< $(SRC_DIR)/*.cpp $(SRC_DIR)/shapes/*.cpp $(LDFLAGS)
+test_triangle: $(TEST_DIR)/test_triangle.cpp $(TEST_DIR)/tests_helpers.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $< $(TEST_DIR)/tests_helpers.cpp $(SRC_DIR)/*.cpp $(SRC_DIR)/shapes/*.cpp $(LDFLAGS)
 
-test_all_shapes: $(TEST_DIR)/test_all_shapes.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $< $(SRC_DIR)/*.cpp $(SRC_DIR)/shapes/*.cpp $(LDFLAGS)
+test_all_shapes: $(TEST_DIR)/test_all_shapes.cpp $(TEST_DIR)/tests_helpers.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $< $(TEST_DIR)/tests_helpers.cpp $(SRC_DIR)/*.cpp $(SRC_DIR)/shapes/*.cpp $(LDFLAGS)
 
 clean:
 	rm -f $(TESTS) 

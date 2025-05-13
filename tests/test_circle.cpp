@@ -2,18 +2,27 @@
 #include "../include/draw.hpp"
 #include <iostream>
 #include <vector>
+#include "tests_helpers.hpp"
 
 int main() {
-    std::cout << "Testing Circle class" << std::endl;
-    
-    Circle circle(100, Point(150, 150));
-    
-    std::cout << "Circle center: (" << circle.center.x << ", " << circle.center.y << ")" << std::endl;
-    std::cout << "Circle radius: " << circle.radius << std::endl;
-    std::cout << "Circle area: " << circle.area() << std::endl;
-    std::cout << "Circle circumference: " << circle.circumference() << std::endl;
-    
-    circle.draw();
-    
-    return 0;
-} 
+    Circle c(10.0, Point(5.0, 3.0));
+
+    assert( almost(c.circumference(), 2 * M_PI * 10.0) );
+    assert( almost(c.area(),          M_PI * 100.0)   );
+
+    c.translate( Point(4.0, -1.0) );
+    assert( almost(c.center.x, 9.0) );
+    assert( almost(c.center.y, 2.0) );
+
+    c.resize(0.5);
+    assert( almost(c.radius, 5.0) );
+    assert( almost(c.circumference(), 2 * M_PI * 5.0) );
+    assert( almost(c.area(),          M_PI * 25.0)    );
+
+    Circle same(5.0, Point(9.0, 2.0));
+    Circle different(5.1, Point(9.0, 2.0));
+    assert(  c.equals(same)      );
+    assert( !c.equals(different) );
+
+    std::cout << "All Circle tests passed ✓\n";
+}
