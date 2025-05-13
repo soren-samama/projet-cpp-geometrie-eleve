@@ -39,7 +39,19 @@ void Circle::resize(double ratio) {
 }
 
 
-bool Circle::equals(Circle circle){ // to do : precision error 
+/*bool Circle::equals(Circle circle){ // to do : precision error 
     return(radius==circle.radius)&&(center.x==circle.center.x && center.y==circle.center.y); 
-}
+}*/
 
+bool Circle::equals(Circle circle) {
+    // Définir une petite tolérance (epsilon) pour la comparaison des flottants
+    const float epsilon = 1e-6;
+
+    // Comparaison des rayons avec tolérance
+    bool radiusEqual = abs(radius - circle.radius) < epsilon;
+
+    // Comparaison des centres avec tolérance
+    bool centerEqual = abs(center.x - circle.center.x) < epsilon && abs(center.y - circle.center.y) < epsilon;
+
+    return radiusEqual && centerEqual;
+}
